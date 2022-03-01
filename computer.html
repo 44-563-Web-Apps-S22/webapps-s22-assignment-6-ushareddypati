@@ -58,6 +58,26 @@ function orderComputer(){
 
 }
 </script>
+<form>
+    <label for="property">Enter a property name </label>
+    <input type ="text" id="property"  value="engraved"> <br>
+
+    <label for="value">Enter a value</label>
+    <input type ="text" id="pvalue" > <br>
+
+    <input type="button" onclick="updateComputer()" value="Update the computer">
+</form>
+<p id="result1">text...</p>
+<script>
+    function updateComputer(){
+        var property=document.getElementById("property").value
+        var pvalue=document.getElementById("pvalue").value
+        my_computer[property]=pvalue
+        document.getElementById("result1").innerHTML = "my_computer[]=  " + JSON.stringify(my_computer);
+
+    }
+</script>
+
 
 </body>
 </html> 
