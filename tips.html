@@ -51,8 +51,10 @@ document.getElementById('result').innerHTML=result;
 </form>    
     <p id="result2"> perform operation</p>
 
-<script>
-    function chooseOp(){    
+    <script>
+    function chooseOp(){
+
+    
      var a = document.getElementById("amount").value
      var tip = document.getElementById("tip_increase").value
      exponent=document.getElementById("**").checked 
@@ -60,13 +62,13 @@ document.getElementById('result').innerHTML=result;
      divide=document.getElementById("/").checked
  
 if(exponent){
-document.getElementById('results2').innerHTML="(Amount ** TipIncrease) Value is:"+a**tip
+document.getElementById('results2').innerHTML="<b>(Amount ** TipIncrease) Value is: </b>"+a**tip
 }
 else if(times){
-document.getElementById('results2').innerHTML="(Amount * TipIncrease) Value is:"+a*tip
-}
-else if(divide){
-document.getElementById('results2').innerHTML="(Amount / TipIncrease) value is:"+a/tip
+document.getElementById('results2').innerHTML="<b>(Amount * TipIncrease) Value is: </b>"+a*tip
+
+}else if(divide){
+document.getElementById('results2').innerHTML="<b>(Amount / TipIncrease) value is: </b>"+a/tip
 }
 }
 </script>

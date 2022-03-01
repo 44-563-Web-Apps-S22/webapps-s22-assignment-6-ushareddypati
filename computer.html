@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>check boxes page</title>
+ </head>
+<body>
+
+<h2>Usha Reddy pati orders a computer</h2>
+
+<form>
+    <label for="memory">Extra memory </label>
+    <input type ="checkbox" id="memory"  value="extra"> <br>
+
+    <label for="Mouse">Mouse</label>
+    <input type ="checkbox" id="mouse" value="mouse"> <br>
+
+    <label for="cell">Cell service</label>
+    <input type ="checkbox" id="cell" value="cell"> <br>
+
+
+    <input type="button" onclick="orderComputer()" value="Order a computer">
+</form>
+
+
+<p id="result" >result...</p>
+
+
+<script> 
+var my_computer={}
+
+function orderComputer(){
+    let my_computer={}
+    memory=document.getElementById("memory").checked    
+    
+    if(memory){
+        my_computer.memory=true;
+    }
+    else{
+        my_computer.memory=false;
+    }
+
+    mouse=document.getElementById("mouse").checked
+
+    if(mouse){
+        my_computer.mouse=true;
+    }
+    else{
+        my_computer.mouse=false;
+    }
+    cell=document.getElementById("cell").checked
+    if(cell){
+        my_computer.cell=true;
+    }
+    else{
+        my_computer.cell=false;
+    }
+    document.getElementById("result").innerHTML="extra_memory: "+my_computer.memory+"<br> mouse: "+my_computer.mouse+" <br> Cell: "+my_computer.cell
+
+}
+</script>
+
+</body>
+</html> 
