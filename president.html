@@ -44,22 +44,27 @@ function checkGuess (){
     out = document.getElementById("result")
     if(secret==guess){
         count=0;
-        correct++;
+        correct=correct+1;
         out.innerHTML = "correct = "+correct +"   wrong = " + wrong;
         alert("You got it right")
         
-    } else {
-       alert("Wrong President")
-       wrong++
+    } 
+    else {
        
+       wrong=wrong+1;
+       count=count+1;
        out.innerHTML = "correct = "+correct +"   wrong = " + wrong;
-       count=count+1
-       console.log(count)
+       alert("Wrong President")
+       
     
-    if(count==3){
-        document.getElementById("check").onclick=gameover
+       if(count>=3){
+        if(wrong>=3){
+        gameover()
+        }
 
-    }}}
+     }
+    }
+}
 
     function gameover(){
         alert("Sorry,game over")
