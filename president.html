@@ -3,9 +3,15 @@
  <head>
      <title>President page</title>
  </head>
+ <style>
+p#result{
+text-decoration:underline;
+color: blueviolet;
+ }
+ </style>
 <body>
 
-<h2>President guess by Usha Reddy Pati</h2>
+<h2 style="color:brown">President guess by Usha Reddy Pati</h2>
 
 <form>
     <label for="secret_president">Enter the secret president name</label>
@@ -14,7 +20,7 @@
     <label for="guess_president">Guess the president</label>
     <input type ="text" id="guess_president" name="guess_president" autofocus> <br>
 
-    <input type="button" onclick="checkGuess()" value="Check the guess">
+    <input type="button" onclick="checkGuess()" id="Check"value="Check the guess">
 </form>
 
 
@@ -23,7 +29,7 @@
 <script> 
   var correct=0;
   var wrong =0;
-
+  var count=0;
 function checkGuess (){
     console.log("Getting form values")
     secret = document.getElementById("secret_president").value
@@ -32,14 +38,27 @@ function checkGuess (){
     
     out = document.getElementById("result")
     if(secret==guess){
-        correct++;
-        alert("You got it right");
+        correct++
+        alert("You got it right").
+        out.innerHTML = "correct = "+correct +"   wrong = " + wrong;
+        count=0;
         
     } else {
-       alert("Wrong President");
-       wrong++;
+       alert("Wrong President").
+       wrong++
+       
+       out.innerHTML = "correct = "+correct +"   wrong = " + wrong;
+       count=count+1
+       console.log(count)
     }
-    out.innerHTML = "correct = "+correct +"   wrong = " + wrong;
+    if(count==3){
+        document.getElementById("check").onclick=gameover
+
+    }
+    function gameover(){
+        alert("Sorry,game over").style.backgroundColor="blue";
+    }
+    
 }
 </script>
 
