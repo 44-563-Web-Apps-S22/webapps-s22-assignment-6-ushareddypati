@@ -4,11 +4,16 @@
      <title>President page</title>
  </head>
  <style>
-p#result{
-text-decoration:underline;
-color: blueviolet;
- }
+    p#result{
+    font-style: italic;
+    color: blueviolet;
+     }
+     #img{
+         border-radius: 20px;
+         outline-style: double;
+     }
  </style>
+    
 <body>
 
 <h2 style="color:brown">President guess by Usha Reddy Pati</h2>
@@ -38,28 +43,29 @@ function checkGuess (){
     
     out = document.getElementById("result")
     if(secret==guess){
-        correct++
-        alert("You got it right").
-        out.innerHTML = "correct = "+correct +"   wrong = " + wrong;
         count=0;
+        correct++;
+        out.innerHTML = "correct = "+correct +"   wrong = " + wrong;
+        alert("You got it right")
         
     } else {
-       alert("Wrong President").
+       alert("Wrong President")
        wrong++
        
        out.innerHTML = "correct = "+correct +"   wrong = " + wrong;
        count=count+1
        console.log(count)
-    }
+    
     if(count==3){
         document.getElementById("check").onclick=gameover
 
-    }
+    }}}
+
     function gameover(){
-        alert("Sorry,game over").style.backgroundColor="blue";
+        alert("Sorry,game over")
     }
     
-}
+
 </script>
 
 <div class="container">
